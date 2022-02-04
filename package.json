@@ -18,7 +18,9 @@
     "@prisma/client": "^3.9.1",
     "axios": "^0.25.0",
     "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
     "express": "^4.17.2",
+    "formdata": "^0.10.4",
     "jsonwebtoken": "^8.5.1"
   }
 }

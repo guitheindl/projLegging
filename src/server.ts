@@ -3,23 +3,17 @@ import api from "./services/api";
 
 const app = express()
 
-app.get("/", (request, response) => {
-    return response.json({
-        message: "Funcionando"
-    });
-});
-
-app.get("/vtex", async (request, response) => {
-    const resposta = await api.get("v1/cliente", {
-        params: {
-            key: "WADAWDAW"
-        }
+app.get("/buscaentrega", async (request, response) => {
+    response.header("Access-Control-Allow-Origin", "*");
+    const body = {
+        tipoBusca: "D",
+        nroBusca: request.query.CPF
+    }
+    const resposta = await api.post("Rastreamentos/Rastreamento/rastrear", null, {
+        params : body
     });
 
-    resposta.data
-    return response.json({
-        message: "Funcionando"
-    });
+    response.send(resposta.data);
 });
 
 app.listen(3000, () => console.log("Server is running"));

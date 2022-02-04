@@ -2,11 +2,7 @@ import axios from "axios";
 
 
 const api = axios.create({
-    baseURL: "https://api.github.com",
-    auth: {
-        password: "fsedawd",
-        username: "dawd"
-    }
+    baseURL: "https://ontime.sinclog.com.br/",
   });
   
 export default api;
